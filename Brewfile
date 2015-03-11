@@ -139,6 +139,8 @@ cask install iterm2
 cask install java
 cask install lastpass-universal
 cask install limechat
+cask install microsoft-lync
+cask install microsoft-lync-plugin
 cask install rdio
 cask install remote-desktop-connection
 cask install silverlight
