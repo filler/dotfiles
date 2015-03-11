@@ -41,6 +41,7 @@ install gnupg
 install gnutls
 install go
 install grep
+install heroku-toolbelt
 install hping
 install htop-osx
 install hub
@@ -75,6 +76,7 @@ install mtr
 install neon
 install nettle
 install nmap
+install npm
 install openal-soft
 install openssh
 install openssl
