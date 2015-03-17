@@ -94,6 +94,7 @@ install python
 install rbenv
 install rbenv-gem-rehash
 install readline
+install redis
 install rpm
 install rpm2cpio
 install rsync
