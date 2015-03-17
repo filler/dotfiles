@@ -39,3 +39,4 @@ vim:
 	git clone https://@github.com/tpope/vim-sensible.git
 	git clone https://github.com/mhinz/vim-signify
 	git clone http://github.com/gmarik/vundle.git
+	git clone git://github.com/chase/vim-ansible-yaml.git
