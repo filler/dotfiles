@@ -35,6 +35,7 @@ install fping
 install gdbm
 install gettext
 install git
+install git-review
 install glib
 install gmp
 install gnupg
