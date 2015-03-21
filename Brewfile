@@ -160,6 +160,7 @@ cask install vagrant
 cask install virtualbox
 cask install vlc
 cask install vmware-fusion
+cask install xscreensaver
 
 # Remove outdated versions from the cellar
 cleanup
