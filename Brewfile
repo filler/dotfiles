@@ -69,6 +69,7 @@ install libyaml
 install lmdb
 install mad
 install makedepend
+install maven
 install mcrypt
 install md5deep
 install md5sha1sum
