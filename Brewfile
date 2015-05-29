@@ -8,6 +8,7 @@ update
 upgrade
 
 install ansible
+install aptly
 install autoconf
 install automake
 install beecrypt
@@ -18,6 +19,7 @@ install boot2docker
 install brew-cask
 install cfengine
 install cmake
+install coreutils
 install csshx
 install curl
 install denominator
@@ -47,6 +49,8 @@ install hping
 install htop-osx
 install hub
 install icu4c
+install imagemagick
+install imagesnap
 install ipcalc
 install irssi
 install jenkins
@@ -126,6 +130,7 @@ cask install alfred
 cask install apache-directory-studio
 cask install boot2docker
 cask install bootchamp
+cask install box-edit
 cask install box-sync
 cask install caffeine
 cask install chefdk
@@ -133,21 +138,28 @@ cask install cloud
 cask install cord
 cask install d235j-xbox360-controller-driver
 cask install dropbox
+cask install disk-inventory-x
+cask install evernote
 cask install firefox
 cask install flash
 cask install flux
+cask install gimp
 cask install google-chrome
 cask install google-earth
 cask install google-hangouts
 cask install hipchat
+cask install imgur
 cask install iterm2
 cask install java
+cask install karabiner
 cask install lastpass-universal
 cask install limechat
 cask install microsoft-lync
 cask install microsoft-lync-plugin
+cask install mou
 cask install rdio
 cask install remote-desktop-connection
+cask install seil
 cask install silverlight
 cask install skitch
 cask install skype
