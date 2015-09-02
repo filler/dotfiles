@@ -1,179 +1,196 @@
-# http://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
-# https://github.com/dougireton/dotfiles/blob/master/Brewfile
+# https://github.com/Homebrew/homebrew-bundle
+#
+# Generated on 20150902 via 'brew bundle dump'
 
-# Make sure we’re using the latest Homebrew
-update
-
-# Upgrade any already-installed formulae
-upgrade
-
-install ansible
-install aptly
-install autoconf
-install automake
-install beecrypt
-install berkeley-db
-install bison
-install bitchx
-install boot2docker
-install brew-cask
-install cfengine
-install cmake
-install coreutils
-install csshx
-install curl
-install denominator
-install docker
-install duplicity
-install dvm
-install exif
-install exiftags
-install exiftool
-install faac
-install faad2
-install ffmpeg
-install figlet
-install fping
-install gdbm
-install gettext
-install git
-install git-review
-install glib
-install gmp
-install gnupg
-install gnutls
-install go
-install grep
-install heroku-toolbelt
-install hping
-install htop-osx
-install hub
-install icu4c
-install imagemagick
-install imagesnap
-install ipcalc
-install irssi
-install jenkins
-install jq
-install json-c
-install lame
-install libao
-install libcaca
-install libevent
-install libexif
-install libffi
-install libgcrypt
-install libgpg-error
-install libmagic
-install librsync
-install libtasn1
-install libtool
-install libvo-aacenc
-install libyaml
-install lmdb
-install mad
-install makedepend
-install maven
-install mcrypt
-install md5deep
-install md5sha1sum
-install mhash
-install mtr
-install neon
-install nettle
-install nmap
-install npm
-install openal-soft
-install openssh
-install openssl
-install ossp-uuid
-install packer
-install pcre
-install pianobar
-install pkg-config
-install popt
-install pwgen
-install pyenv
-install pyenv-virtualenv
-install pyenv-virtualenvwrapper
-install python
-install rbenv
-install rbenv-gem-rehash
-install readline
-install redis
-install rpm
-install rpm2cpio
-install rsync
-install ruby-build
-install screenfetch
-install sdl
-install sdl2
-install speedtest_cli
-install sqlite
-install ssh-copy-id
-install tcpdump
-install terraform
-install tmux
-install toilet
-install tree
-install vim
-install weechat
-install wget
-install x264
-install xvid
-install xz
-install zsh
-
-# homebrew cask
-cask install adium
-cask install alfred
-cask install apache-directory-studio
-cask install boot2docker
-cask install bootchamp
-cask install box-edit
-cask install box-sync
-cask install caffeine
-cask install chefdk
-cask install cloud
-cask install cord
-cask install d235j-xbox360-controller-driver
-cask install dropbox
-cask install disk-inventory-x
-cask install evernote
-cask install firefox
-cask install flash
-cask install flux
-cask install gimp
-cask install google-chrome
-cask install google-earth
-cask install google-hangouts
-cask install hipchat
-cask install imgur
-cask install iterm2
-cask install java
-cask install karabiner
-cask install lastpass-universal
-cask install limechat
-cask install microsoft-lync
-cask install microsoft-lync-plugin
-cask install mou
-cask install rdio
-cask install remote-desktop-connection
-cask install seil
-cask install silverlight
-cask install skitch
-cask install skype
-cask install spotify
-cask install sublime-text
-cask install sublime-text3
-cask install tunnelblick
-cask install unetbootin
-cask install utorrent
-cask install vagrant
-cask install virtualbox
-cask install vlc
-cask install vmware-fusion
-cask install xscreensaver
-
-# Remove outdated versions from the cellar
-cleanup
+tap 'caskroom/cask'
+tap 'caskroom/versions'
+tap 'fnichol/dvm'
+tap 'homebrew/binary'
+tap 'homebrew/boneyard'
+tap 'homebrew/bundle'
+tap 'homebrew/dupes'
+cask 'java'
+cask 'xquartz'
+brew 'libyaml'
+brew 'pkg-config'
+brew 'makedepend'
+brew 'openssl'
+brew 'ansible'
+brew 'xz'
+brew 'pcre'
+brew 'gettext'
+brew 'git'
+brew 'go'
+brew 'aptly'
+brew 'asciinema'
+brew 'autoconf'
+brew 'automake'
+brew 'autossh'
+brew 'icu4c'
+brew 'libtool'
+brew 'beecrypt'
+brew 'berkeley-db'
+brew 'bison'
+brew 'bitchx'
+brew 'docker'
+brew 'boot2docker'
+brew 'lmdb'
+brew 'cfengine'
+brew 'cmake'
+brew 'gmp'
+brew 'coreutils'
+brew 'csshx'
+brew 'curl'
+brew 'denominator'
+brew 'docker-machine'
+brew 'popt'
+brew 'librsync'
+brew 'gnupg'
+brew 'duplicity'
+brew 'elinks'
+brew 'libexif'
+brew 'exif'
+brew 'exiftags'
+brew 'exiftool'
+brew 'faac'
+brew 'faad2'
+brew 'x264'
+brew 'lame'
+brew 'libvo-aacenc'
+brew 'xvid'
+brew 'libpng'
+brew 'freetype'
+brew 'libcaca'
+brew 'ffmpeg'
+brew 'figlet'
+brew 'fping'
+brew 'gdbm'
+brew 'gecode'
+brew 'git-review'
+brew 'libffi'
+brew 'glib'
+brew 'libtasn1'
+brew 'nettle'
+brew 'gnutls'
+brew 'heroku-toolbelt'
+brew 'hping'
+brew 'htop-osx'
+brew 'httpie'
+brew 'hub'
+brew 'jpeg'
+brew 'libtiff'
+brew 'imagemagick'
+brew 'imagesnap'
+brew 'ipcalc'
+brew 'irssi'
+brew 'jenkins'
+brew 'oniguruma'
+brew 'jq'
+brew 'json-c'
+brew 'libao'
+brew 'libevent'
+brew 'libgpg-error'
+brew 'libgcrypt'
+brew 'readline'
+brew 'sqlite'
+brew 'python'
+brew 'libmagic'
+brew 'links'
+brew 'mad'
+brew 'maven'
+brew 'mhash'
+brew 'mcrypt'
+brew 'md5deep'
+brew 'md5sha1sum'
+brew 'mtr'
+brew 'mysql'
+brew 'neon'
+brew 'nmap'
+brew 'node'
+brew 'openal-soft'
+brew 'ossp-uuid'
+brew 'pianobar'
+brew 'pwgen'
+brew 'pyenv'
+brew 'pyenv-virtualenv'
+brew 'pyenv-virtualenvwrapper'
+brew 'rbenv'
+brew 'rbenv-gem-rehash'
+brew 'redis'
+brew 'rpm2cpio'
+brew 'rpm'
+brew 'ruby-build'
+brew 'samba'
+brew 'screenfetch'
+brew 'sdl'
+brew 'sdl2'
+brew 'speedtest_cli'
+brew 'ssh-copy-id'
+brew 'terraform'
+brew 'tmux'
+brew 'toilet'
+brew 'tree'
+brew 'vim'
+brew 'weechat'
+brew 'wget'
+brew 'zsh'
+brew 'caskroom/cask/brew-cask'
+brew 'fnichol/dvm/dvm'
+brew 'homebrew/dupes/grep'
+brew 'homebrew/dupes/openssh'
+brew 'homebrew/dupes/rsync'
+brew 'homebrew/dupes/tcpdump'
+cask 'adium'
+cask 'alfred'
+cask 'apache-directory-studio'
+cask 'boot2docker'
+cask 'bootchamp'
+cask 'box-edit'
+cask 'box-sync'
+cask 'boxer'
+cask 'caffeine'
+cask 'chefdk'
+cask 'cloud'
+cask 'cord'
+cask 'd235j-xbox360-controller-driver'
+cask 'disk-inventory-x'
+cask 'dosbox'
+cask 'drobo-dashboard'
+cask 'dropbox'
+cask 'evernote'
+cask 'firefox'
+cask 'flash'
+cask 'flux'
+cask 'gimp'
+cask 'google-chrome'
+cask 'google-earth'
+cask 'google-hangouts'
+cask 'hipchat'
+cask 'iexplorer'
+cask 'imgur'
+cask 'iterm2'
+cask 'karabiner'
+cask 'lastpass-universal'
+cask 'limechat'
+cask 'microsoft-lync'
+cask 'microsoft-lync-plugin'
+cask 'mou'
+cask 'navicat-for-sql-server'
+cask 'rdio'
+cask 'remote-desktop-connection'
+cask 'seil'
+cask 'silverlight'
+cask 'skitch'
+cask 'skype'
+cask 'spotify'
+cask 'sublime-text'
+cask 'sublime-text3'
+cask 'tunnelblick'
+cask 'unetbootin'
+cask 'utorrent'
+cask 'vagrant'
+cask 'virtualbox'
+cask 'vlc'
+cask 'vmware-fusion'
+cask 'xscreensaver'
+cask 'ynab'

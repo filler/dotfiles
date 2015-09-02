@@ -15,7 +15,7 @@ link:
 # This assumes the above Brewfile
 # http://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
 packages:
-	brew tap homebrew/boneyard
+	brew tap Homebrew/bundle
 	brew bundle
 
 bin:
