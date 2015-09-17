@@ -22,6 +22,7 @@ link:
 	ln -sf ~/.dotfiles/gitconfig			~/.gitconfig
 	ln -sf ~/.dotfiles/ruby-version		~/.ruby-version
 	ln -sf ~/.dotfiles/tmux.conf			~/.tmux.conf
+	ln -sf ~/.dotfiles/vimrc.conf			~/.vimrc
 	ln -sf ~/.dotfiles/zshrc					~/.zshrc
 
 # This assumes the above Brewfile

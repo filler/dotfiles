@@ -2,6 +2,14 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" ish I love
+set number
+set showcmd
+set cursorline
+set showmatch
+" set binary noeol
+set cc=72
+
 " Powerline
 " http://choorucode.com/2013/02/17/how-to-install-and-use-vim-powerline-plugin-for-vim/
 set t_Co=256
@@ -44,5 +52,24 @@ colorscheme solarized
 set ts=2 sw=2 et
 let g:indent_guides_start_level = 2
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+if 'dark' == &background
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray ctermbg=0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
+else
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray ctermbg=0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=0
+endif
+
+" http://stackoverflow.com/questions/2561418/how-to-comment-out-a-block-of-python-code-in-vim
+vnoremap # :s#^#\##<cr>
+vnoremap -# :s#^\###<cr>
+
+" vim-json
+let g:vim_json_warnings = 1
+let g:vim_json_syntax_conceal = 0
+
+" dat end of line
+" http://stackoverflow.com/questions/1050640/vim-disable-automatic-newline-at-end-of-file
+set fileformats+=dos
