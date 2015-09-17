@@ -1,3 +1,15 @@
+SHELL := /bin/bash
+
+help:
+	@echo ""
+	@echo "help           - show help information"
+	@echo "install        - ALL THE THINGS"
+	@echo "link           - symlink relevant dotfiles"
+	@echo "packages       - tap brew-bundle and install"
+	@echo "bin            - get ~/bin/ setup"
+	@echo "vim            - setup vim bundles"
+	@echo ""
+
 # Inspired by https://github.com/b0d0nne11/dotfiles
 install: link packages bin vim
 
