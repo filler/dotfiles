@@ -54,3 +54,6 @@ vim:
 	git clone https://github.com/gmarik/vundle.git
 	git clone https://github.com/chase/vim-ansible-yaml.git
 	git clone https://github.com/elzr/vim-json.git
+
+brew-dump:
+	@rm Brewfile ; brew bundle dump
