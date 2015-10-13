@@ -73,3 +73,6 @@ let g:vim_json_syntax_conceal = 0
 " dat end of line
 " http://stackoverflow.com/questions/1050640/vim-disable-automatic-newline-at-end-of-file
 set fileformats+=dos
+
+" big files tho
+set maxmempattern=5000
