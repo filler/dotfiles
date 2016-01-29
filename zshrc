@@ -10,6 +10,9 @@ ZSH_THEME="wedisagree"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vpnyes="sudo openconnect vpn.dfw1.rackspace.com -b"
+alias vpnno="sudo pkill -SIGINT openconnect"
+alias vpnwat="curl -s icanhazip.com | xargs -n1 dig +short -x"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
