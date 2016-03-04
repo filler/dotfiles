@@ -10,9 +10,17 @@ ZSH_THEME="wedisagree"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Openconnect
 alias vpnyes="sudo openconnect vpn.dfw1.rackspace.com -b"
 alias vpnno="sudo pkill -SIGINT openconnect"
 alias vpnwat="curl -s icanhazip.com | xargs -n1 dig +short -x"
+alias vpnvidyo="sudo route -n add 174.143.224.224/27 $(netstat -nr | egrep '^default.*UGScI' | awk {'print $2'})"
+alias vpnvidyono="sudo route -n delete 174.143.224.224/27 $(netstat -nr | egrep '^default.*UGScI' | awk {'print $2'})"
+alias vpnvidyodel="sudo route -n delete 174.143.224.224/27 $(netstat -nr | egrep '^default.*UGScI' | awk {'print $2'})"
+
+# Homebrew
+alias brewgo="brew update && brew upgrade && brew cleanup"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
