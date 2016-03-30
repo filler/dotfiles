@@ -37,6 +37,9 @@
   graph           = "!f() { git log --oneline --abbrev-commit --graph --decorate; }; f"
   hist            = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   p               = pull --rebase
+  po              = push origin
+  pof             = push origin --force
+  pot             = push origin --tags
   pr              = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
   rom             = rebase origin/master
   st              = status -sb
