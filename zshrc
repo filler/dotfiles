@@ -102,5 +102,8 @@ export BYOBU_PREFIX=$(brew --prefix)
 # ansible-dk
 #eval "$(ansible-dk shell-init zsh)"
 
+# added by travis gem
+[ -f /Users/silkey/.travis/travis.sh ] && source /Users/silkey/.travis/travis.sh
+
 # dvm
 source /Users/silkey/.dvm/dvm.sh
