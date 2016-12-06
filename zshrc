@@ -97,4 +97,8 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export BYOBU_PREFIX=$(brew --prefix)
 
 # chef-shell
-eval "$(chef shell-init zsh)"
+#eval "$(chef shell-init zsh)"
+
+# ansible-dk
+#eval "$(ansible-dk shell-init zsh)"
+
