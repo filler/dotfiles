@@ -161,6 +161,7 @@ brew 'links'
 brew 'little-cms2', args: ['universal']
 brew 'mad'
 brew 'makedepend'
+brew 'mas'
 brew 'maven'
 brew 'mhash'
 brew 'mcrypt'
