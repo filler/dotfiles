@@ -23,6 +23,9 @@ alias vpnvidyodel="sudo route -n delete 174.143.224.224/27 $(netstat -nr | egrep
 # Homebrew
 alias brewgo="brew update && brew upgrade && brew cleanup"
 
+# lulz
+#alias saydone="for i in `say -v \? | awk {'print $1'}` ; do say done -v $i ; done"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
