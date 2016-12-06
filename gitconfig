@@ -100,5 +100,5 @@
 [url "https://"]
   insteadOf = git://
 [hub]
-	host = github.rackspace.com
-	protocol = https
+  host = github.rackspace.com
+  protocol = https
