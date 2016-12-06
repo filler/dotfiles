@@ -102,3 +102,5 @@ export BYOBU_PREFIX=$(brew --prefix)
 # ansible-dk
 #eval "$(ansible-dk shell-init zsh)"
 
+# dvm
+source /Users/silkey/.dvm/dvm.sh
