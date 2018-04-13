@@ -63,7 +63,7 @@ alias brewgo="brew update && brew upgrade && brew cleanup"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github brew osx sublime rsync tmux rbenv jsontools vim vundle rvm)
+plugins=(git github brew osx sublime rsync tmux rbenv jsontools vim vundle rvm wd)
 
 source $ZSH/oh-my-zsh.sh
 

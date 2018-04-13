@@ -65,6 +65,7 @@ link: ## symlink all relevant dotfiles
 	ln -sf ~/.dotfiles/ruby-version   ~/.ruby-version
 	ln -sf ~/.dotfiles/tmux.conf      ~/.tmux.conf
 	ln -sf ~/.dotfiles/vimrc          ~/.vimrc
+	ln -sf ~/.dotfiles/warprc         ~/.warprc
 	ln -sf ~/.dotfiles/zshrc          ~/.zshrc
 
 # This assumes the above Brewfile
