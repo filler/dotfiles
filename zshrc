@@ -107,3 +107,9 @@ export BYOBU_PREFIX=$(brew --prefix)
 
 # dvm
 source /Users/silkey/.dvm/dvm.sh
+
+# time between events - listed in hours
+# relies on gnu date from brew - bsd date lololol
+tbe () {
+  echo $(( ( $(gdate +%s -d "$2") - $(gdate +%s -d "$1") ) / 60 / 60 )) ;
+}
