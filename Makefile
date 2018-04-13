@@ -90,6 +90,7 @@ brew-dump:  ## True up your Brewfile for brew bundler
 
 osx-prefs: ## Set OS X preferences
 	@defaults write com.apple.finder CreateDesktop -bool false && \
+	@defaults write com.apple.desktopservices DSDontWriteNetworkStores true && \
 	killall Finder
 
 osx-update: osx-update-enable osx-update-list osx-update-install ## Apply Apple patches
