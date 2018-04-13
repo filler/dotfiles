@@ -35,7 +35,7 @@
   ciaa            = commit -a --amend
   cm              = checkout master
   di              = diff
-  f               = fetch -v
+  f               = fetch -v --tags
   graph           = "!f() { git log --oneline --abbrev-commit --graph --decorate; }; f"
   hist            = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   p               = pull --rebase
