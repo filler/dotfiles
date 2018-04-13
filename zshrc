@@ -21,7 +21,7 @@ alias vpnvidyono="sudo route -n delete 174.143.224.224/27 $(netstat -nr | egrep 
 alias vpnvidyodel="sudo route -n delete 174.143.224.224/27 $(netstat -nr | egrep '^default.*UGScI' | awk {'print $2'})"
 
 # Homebrew
-alias brewgo="brew update && brew upgrade && brew cleanup"
+alias brewup="brew update ; brew upgrade ; brew cu -y ; brew cleanup ; brew cleanup"
 
 # lulz
 #alias saydone="for i in `say -v \? | awk {'print $1'}` ; do say done -v $i ; done"
