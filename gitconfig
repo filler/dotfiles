@@ -43,6 +43,12 @@
   pof             = push origin --force
   pot             = push origin --tags
   pr              = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
+  recent          = "!r() { \
+                    git for-each-ref --color=always --sort=-committerdate refs/heads \
+                    --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' \
+                    | column -ts'|' \
+                    | cut -c -$(tput cols) \
+                     ;}; r"
   rom             = rebase origin/master
   rum             = rebase upstream/master
   rc              = rebase --continue
