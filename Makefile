@@ -22,6 +22,10 @@ banner:
 # TODO venv: pip install virtualenvwrapper
 # TODO brew: install brew
 # TODO rvm: install rvm
+# TODO ssh: create new keypair
+#   https://blog.g3rt.nl/upgrade-your-ssh-keys.html
+# TODO byobu activate
+# TODO scream about iterm prefs to Meslo Powerline font?
 #
 # TODO rebootstrap ~/.ssh/
 # TODO rebootstrap ~/code/
@@ -30,6 +34,7 @@ banner:
 # TODO navicat
 # TODO remote-desktop-connection
 # TODO ssh-add -K <keys>
+# TODO add shell change - /etc/shells and chsh -s to brew zsh
 
 # All the vim plugins to install
 PLUGINS = \
