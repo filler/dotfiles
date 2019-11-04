@@ -111,9 +111,6 @@ export BYOBU_PREFIX=$(brew --prefix)
 # added by travis gem
 [ -f /Users/silkey/.travis/travis.sh ] && source /Users/silkey/.travis/travis.sh
 
-# dvm
-source /Users/silkey/.dvm/dvm.sh
-
 # time between events - listed in hours
 # relies on gnu date from brew - bsd date lololol
 tbe () {
