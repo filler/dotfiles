@@ -69,7 +69,7 @@ alias hussh="ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github brew osx sublime rsync tmux rbenv jsontools vim vundle rvm wd)
+plugins=(git github brew osx sublime rsync tmux rbenv jsontools vim-interaction vi-mode vundle rvm wd pyenv)
 
 source $ZSH/oh-my-zsh.sh
 
