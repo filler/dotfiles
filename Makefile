@@ -22,6 +22,10 @@ banner:
 # TODO venv: pip install virtualenvwrapper
 # TODO brew: install brew
 # TODO rvm: install rvm
+# TODO ssh: create new keypair
+#   https://blog.g3rt.nl/upgrade-your-ssh-keys.html
+# TODO byobu activate
+# TODO scream about iterm prefs to Meslo Powerline font?
 #
 # TODO rebootstrap ~/.ssh/
 # TODO rebootstrap ~/code/
@@ -30,6 +34,7 @@ banner:
 # TODO navicat
 # TODO remote-desktop-connection
 # TODO ssh-add -K <keys>
+# TODO add shell change - /etc/shells and chsh -s to brew zsh
 
 # All the vim plugins to install
 PLUGINS = \
@@ -38,6 +43,8 @@ PLUGINS = \
 	https://github.com/chase/vim-ansible-yaml.git           \
 	https://github.com/elzr/vim-json.git                    \
 	https://github.com/gmarik/vundle.git                    \
+	https://github.com/hashivim/vim-packer.git              \
+	https://github.com/hashivim/vim-vagrant.git             \
 	https://github.com/jnurmine/Zenburn.git                 \
 	https://github.com/mhinz/vim-signify.git                \
 	https://github.com/nathanaelkane/vim-indent-guides.git  \
@@ -49,9 +56,6 @@ PLUGINS = \
 	https://github.com/tpope/vim-markdown.git               \
 	https://github.com/tpope/vim-sensible.git               \
 	https://github.com/vadv/vim-chef.git                    \
-	https://github.com/hashivim/vim-vagrant.git             \
-	https://github.com/hashivim/vim-packer.git              \
-	https://github.com/hashivim/vim-vagrant.git             \
 
 all: packages bin vim link ## ALL THE THINGS
 
@@ -82,15 +86,17 @@ bin: ## Setup ~/bin
 vim: ## Setup vimbundles
 	@if [ ! -d ~/.vim/autoload ] ; then mkdir -p ~/.vim/autoload ; fi && \
 	if [ ! -d ~/.vim/bundle/ ] ; then mkdir -p ~/.vim/bundle/ ; fi && \
-	cd ~/.vim/bundle/ && $(foreach plugin,$(PLUGINS), [ -d $(plugin) ] || git clone -q $(plugin) ; )
-	cd /tmp && git clone git@github.com:powerline/fonts.git && cd fonts && ./install.sh
+	cd ~/.vim/bundle/ && $(foreach plugin,$(PLUGINS), [ -d $(plugin) ] || git clone -q $(plugin) ; ) && \
+	cd /tmp && git clone git@github.com:powerline/fonts.git && cd fonts && ./install.sh && \
+	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 brew-dump:  ## True up your Brewfile for brew bundler
 	@rm Brewfile ; brew bundle dump
 
 osx-prefs: ## Set OS X preferences
 	@defaults write com.apple.finder CreateDesktop -bool false && \
-	@defaults write com.apple.desktopservices DSDontWriteNetworkStores true && \
+	defaults write com.apple.desktopservices DSDontWriteNetworkStores true && \
 	killall Finder
 
 osx-update: osx-update-enable osx-update-list osx-update-install ## Apply Apple patches
@@ -106,3 +112,7 @@ osx-update-enable: ## Enable automatic OS X updates
 	@sudo softwareupdate --schedule
 	@echo "Enabling automatic update schedule ..."
 	@sudo softwareupdate --schedule on
+
+test: ## Test
+	docker pull koalaman/shellcheck:stable && \
+	docker run -v "$PWD:/mnt" koalaman/shellcheck *

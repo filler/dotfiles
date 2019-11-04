@@ -9,7 +9,7 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
-DEFAULT_USER="silkey"
+DEFAULT_USER="$USER"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -69,7 +69,7 @@ alias hussh="ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github brew osx sublime rsync tmux rbenv jsontools vim vundle rvm wd)
+plugins=(git github brew osx sublime rsync tmux rbenv jsontools vim-interaction vi-mode vundle rvm wd pyenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,9 +110,6 @@ export BYOBU_PREFIX=$(brew --prefix)
 
 # added by travis gem
 [ -f /Users/silkey/.travis/travis.sh ] && source /Users/silkey/.travis/travis.sh
-
-# dvm
-source /Users/silkey/.dvm/dvm.sh
 
 # time between events - listed in hours
 # relies on gnu date from brew - bsd date lololol
