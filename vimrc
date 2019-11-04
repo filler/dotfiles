@@ -6,9 +6,11 @@ filetype plugin indent on
 set number
 set showcmd
 set cursorline
+set cursorcolumn
 set showmatch
 " set binary noeol
-set cc=72
+set cc=80
+set tw=80
 
 " Powerline
 " http://choorucode.com/2013/02/17/how-to-install-and-use-vim-powerline-plugin-for-vim/
