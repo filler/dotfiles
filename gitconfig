@@ -38,7 +38,7 @@
   di              = diff
   f               = fetch -v --tags
   graph           = "!f() { git log --oneline --abbrev-commit --graph --decorate; }; f"
-  hist            = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  hist            = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr - %an)%Creset' --abbrev-commit --date=relative
   p               = pull --rebase
   po              = push origin
   pof             = push origin --force
