@@ -9,7 +9,7 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
-DEFAULT_USER="silkey"
+DEFAULT_USER="$USER"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
