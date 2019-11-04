@@ -81,8 +81,10 @@ bin: ## Setup ~/bin
 vim: ## Setup vimbundles
 	@if [ ! -d ~/.vim/autoload ] ; then mkdir -p ~/.vim/autoload ; fi && \
 	if [ ! -d ~/.vim/bundle/ ] ; then mkdir -p ~/.vim/bundle/ ; fi && \
-	cd ~/.vim/bundle/ && $(foreach plugin,$(PLUGINS), [ -d $(plugin) ] || git clone -q $(plugin) ; )
-	cd /tmp && git clone git@github.com:powerline/fonts.git && cd fonts && ./install.sh
+	cd ~/.vim/bundle/ && $(foreach plugin,$(PLUGINS), [ -d $(plugin) ] || git clone -q $(plugin) ; ) && \
+	cd /tmp && git clone git@github.com:powerline/fonts.git && cd fonts && ./install.sh && \
+	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 brew-dump:  ## True up your Brewfile for brew bundler
 	@rm Brewfile ; brew bundle dump
