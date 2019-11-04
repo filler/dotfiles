@@ -1,1 +1,3 @@
-hyp:~/code/work/hyp/hypervisors
+hyp:~/code/rackspace/hyp/hypervisors
+da:~/code/rackspace/dns/designate-ansible
+ps:~/code/work/platform-services

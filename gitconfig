@@ -9,7 +9,8 @@
   autocrlf = input
 [user]
   name            = Nick Silkey
-  email           = nick.silkey@rackspace.com
+  email           = nsilkey@digitalocean.com
+  signingkey      = 881EC6C3B451115C
 [github]
   user            = filler
 [push]
@@ -106,5 +107,5 @@
 [url "https://"]
   insteadOf = git://
 [hub]
-  host = github.rackspace.com
+  host = github.internal.digitalocean.com
   protocol = https
