@@ -106,3 +106,7 @@ osx-update-enable: ## Enable automatic OS X updates
 	@sudo softwareupdate --schedule
 	@echo "Enabling automatic update schedule ..."
 	@sudo softwareupdate --schedule on
+
+test: ## Test
+	docker pull koalaman/shellcheck:stable && \
+	docker run -v "$PWD:/mnt" koalaman/shellcheck *
