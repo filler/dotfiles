@@ -38,6 +38,8 @@ PLUGINS = \
 	https://github.com/chase/vim-ansible-yaml.git           \
 	https://github.com/elzr/vim-json.git                    \
 	https://github.com/gmarik/vundle.git                    \
+	https://github.com/hashivim/vim-packer.git              \
+	https://github.com/hashivim/vim-vagrant.git             \
 	https://github.com/jnurmine/Zenburn.git                 \
 	https://github.com/mhinz/vim-signify.git                \
 	https://github.com/nathanaelkane/vim-indent-guides.git  \
@@ -49,9 +51,6 @@ PLUGINS = \
 	https://github.com/tpope/vim-markdown.git               \
 	https://github.com/tpope/vim-sensible.git               \
 	https://github.com/vadv/vim-chef.git                    \
-	https://github.com/hashivim/vim-vagrant.git             \
-	https://github.com/hashivim/vim-packer.git              \
-	https://github.com/hashivim/vim-vagrant.git             \
 
 all: packages bin vim link ## ALL THE THINGS
 
