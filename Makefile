@@ -75,7 +75,10 @@ link: ## symlink all relevant dotfiles
 # This assumes the above Brewfile
 # http://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
 packages: ## Install homebrew, brew bundle install
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	# Check for git installed
+	# If not found, give snippets to install
+	if [ ! git ] ; then echo "I cannot find git in my $PATH!  Install it?  git --version ..." ; fi
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
 	brew tap Homebrew/bundle
 	brew bundle
 
