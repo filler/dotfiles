@@ -57,7 +57,7 @@ PLUGINS = \
 	https://github.com/tpope/vim-sensible.git               \
 	https://github.com/vadv/vim-chef.git                    \
 
-all: packages bin vim link ## ALL THE THINGS
+all: packages bin ssh vim zsh rvm link ## ALL THE THINGS
 
 link: ## symlink all relevant dotfiles
 	ln -sf ~/.dotfiles/bashrc         ~/.bashrc
@@ -113,6 +113,15 @@ osx-update-enable: ## Enable automatic OS X updates
 	@echo "Enabling automatic update schedule ..."
 	@sudo softwareupdate --schedule on
 
+rvm:  ## Install rvm
+	curl -sSL https://get.rvm.io | bash
+
+ssh:  ## Setup ssh subsystem
+	ssh-keyscan github.com >> ~/.ssh/known_hosts
+
 test: ## Test
 	docker pull koalaman/shellcheck:stable && \
 	docker run -v "$PWD:/mnt" koalaman/shellcheck *
+
+zsh:  ## Install oh-myzsh
+	curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
