@@ -17,13 +17,7 @@ banner:
 	echo "     _|_|_|    _|_|        _|_|    _|      _|  _|    _|_|_|  _|_|_|  "
 	echo ""
 
-# TODO vim: pathogen install
-# TODO zsh: install ohmyzsh
 # TODO venv: pip install virtualenvwrapper
-# TODO brew: install brew
-# TODO rvm: install rvm
-# TODO ssh: create new keypair
-#   https://blog.g3rt.nl/upgrade-your-ssh-keys.html
 # TODO byobu activate
 # TODO scream about iterm prefs to Meslo Powerline font?
 #
