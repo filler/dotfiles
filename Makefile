@@ -114,7 +114,9 @@ curl -sSL https://get.rvm.io | bash
 endif
 
 ssh:  ## Setup ssh subsystem
-	ssh-keyscan github.com >> ~/.ssh/known_hosts
+ifeq (, $(shell grep -q "^github.com" $(HOME)/.ssh/known_hosts))
+$(shell ssh-keyscan github.com >> $(HOME)/.ssh/known_hosts)
+endif
 
 test: ## Test
 	docker pull koalaman/shellcheck:stable && \
