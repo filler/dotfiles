@@ -29,14 +29,16 @@ Provide a simple, cheap means to rebuild my machine.
 
 ### How?
 
-Provided a new OS X install, using only `make`, rehydrate all the
+Provided a new OS X install, using only `make`[1], rehydrate all the
 things.
 
 I shouldnt have to find the right file.
 
 ![](gif.gif)
 
+[1]: Currently we have to get git installed.
 
+`git --version`
 
 ### Why?
 

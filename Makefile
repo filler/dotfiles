@@ -17,13 +17,7 @@ banner:
 	echo "     _|_|_|    _|_|        _|_|    _|      _|  _|    _|_|_|  _|_|_|  "
 	echo ""
 
-# TODO vim: pathogen install
-# TODO zsh: install ohmyzsh
 # TODO venv: pip install virtualenvwrapper
-# TODO brew: install brew
-# TODO rvm: install rvm
-# TODO ssh: create new keypair
-#   https://blog.g3rt.nl/upgrade-your-ssh-keys.html
 # TODO byobu activate
 # TODO scream about iterm prefs to Meslo Powerline font?
 #
@@ -57,7 +51,7 @@ PLUGINS = \
 	https://github.com/tpope/vim-sensible.git               \
 	https://github.com/vadv/vim-chef.git                    \
 
-all: packages bin vim link ## ALL THE THINGS
+all: packages bin ssh vim zsh rvm link ## ALL THE THINGS
 
 link: ## symlink all relevant dotfiles
 	ln -sf ~/.dotfiles/bashrc         ~/.bashrc
@@ -75,7 +69,10 @@ link: ## symlink all relevant dotfiles
 # This assumes the above Brewfile
 # http://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
 packages: ## Install homebrew, brew bundle install
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	# Check for git installed
+	# If not found, give snippets to install
+	if [ ! git ] ; then echo "I cannot find git in my $PATH!  Install it?  git --version ..." ; fi
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
 	brew tap Homebrew/bundle
 	brew bundle
 
@@ -84,11 +81,10 @@ bin: ## Setup ~/bin
 	chmod +x ~/bin/*
 
 vim: ## Setup vimbundles
-	@if [ ! -d ~/.vim/autoload ] ; then mkdir -p ~/.vim/autoload ; fi && \
-	if [ ! -d ~/.vim/bundle/ ] ; then mkdir -p ~/.vim/bundle/ ; fi && \
-	cd ~/.vim/bundle/ && $(foreach plugin,$(PLUGINS), [ -d $(plugin) ] || git clone -q $(plugin) ; ) && \
-	cd /tmp && git clone git@github.com:powerline/fonts.git && cd fonts && ./install.sh && \
-	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+	if [ ! -d ~/.vim/autoload ] ; then mkdir -p ~/.vim/autoload ; fi
+	if [ ! -d ~/.vim/bundle/ ] ; then mkdir -p ~/.vim/bundle/ ; fi
+	cd ~/.vim/bundle/ && $(foreach plugin,$(PLUGINS), [ -d $(plugin) ] || git clone -q $(plugin) ; )
+	if [ ! -d /tmp/fonts ] ; then cd /tmp && git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh ; fi
 	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 brew-dump:  ## True up your Brewfile for brew bundler
@@ -113,6 +109,15 @@ osx-update-enable: ## Enable automatic OS X updates
 	@echo "Enabling automatic update schedule ..."
 	@sudo softwareupdate --schedule on
 
+rvm:  ## Install rvm
+	curl -sSL https://get.rvm.io | bash
+
+ssh:  ## Setup ssh subsystem
+	ssh-keyscan github.com >> ~/.ssh/known_hosts
+
 test: ## Test
 	docker pull koalaman/shellcheck:stable && \
 	docker run -v "$PWD:/mnt" koalaman/shellcheck *
+
+zsh:  ## Install oh-myzsh
+	curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
