@@ -127,3 +127,6 @@ test: ## Test
 
 zsh:  ## Install oh-myzsh
 	if [ ! -d ~/.oh-my-zsh ] ; then curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh ; fi
+	dscl . -read /Users/$USER UserShell
+	sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+	dscl . -read /Users/$USER UserShell
