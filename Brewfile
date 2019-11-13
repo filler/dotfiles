@@ -280,7 +280,7 @@ cask "wireshark"
 cask "xscreensaver"
 cask "ynab"
 cask "zoomus"
-cask "caskroom/drivers/drobo-dashboard"
+cask "drobo-dashboard"
 mas "Amphetamine", id: 937984704
 mas "Deckset", id: 847496013
 mas "Keynote", id: 409183694

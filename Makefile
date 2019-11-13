@@ -78,12 +78,11 @@ packages: ## Install homebrew, brew bundle install
 
 bin: ## Setup ~/bin
 	mkdir -p ~/bin
-	chmod +x ~/bin/*
 
 vim: ## Setup vimbundles
 	if [ ! -d ~/.vim/autoload ] ; then mkdir -p ~/.vim/autoload ; fi
 	if [ ! -d ~/.vim/bundle/ ] ; then mkdir -p ~/.vim/bundle/ ; fi
-	cd ~/.vim/bundle/ && $(foreach plugin,$(PLUGINS), [ -d $(plugin) ] || git clone -q $(plugin) ; )
+	cd ~/.vim/bundle/ && $(foreach plugin,$(PLUGINS), git clone -q $(plugin) || true )
 	if [ ! -d /tmp/fonts ] ; then cd /tmp && git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh ; fi
 	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
@@ -110,14 +109,18 @@ osx-update-enable: ## Enable automatic OS X updates
 	@sudo softwareupdate --schedule on
 
 rvm:  ## Install rvm
-	curl -sSL https://get.rvm.io | bash
+ifeq (, $(shell which rvm))
+curl -sSL https://get.rvm.io | bash
+endif
 
 ssh:  ## Setup ssh subsystem
-	ssh-keyscan github.com >> ~/.ssh/known_hosts
+ifeq (, $(shell grep -q "^github.com" $(HOME)/.ssh/known_hosts))
+$(shell ssh-keyscan github.com >> $(HOME)/.ssh/known_hosts)
+endif
 
 test: ## Test
 	docker pull koalaman/shellcheck:stable && \
 	docker run -v "$PWD:/mnt" koalaman/shellcheck *
 
 zsh:  ## Install oh-myzsh
-	curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+	if [ ! -d ~/.oh-my-zsh ] ; then curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh ; fi
