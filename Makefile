@@ -78,7 +78,6 @@ packages: ## Install homebrew, brew bundle install
 
 bin: ## Setup ~/bin
 	mkdir -p ~/bin
-	chmod +x ~/bin/*
 
 vim: ## Setup vimbundles
 	if [ ! -d ~/.vim/autoload ] ; then mkdir -p ~/.vim/autoload ; fi
