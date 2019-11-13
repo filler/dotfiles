@@ -123,4 +123,4 @@ test: ## Test
 	docker run -v "$PWD:/mnt" koalaman/shellcheck *
 
 zsh:  ## Install oh-myzsh
-	curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+	if [ ! -d ~/.oh-my-zsh ] ; then curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh ; fi
