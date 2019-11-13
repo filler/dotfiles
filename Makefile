@@ -109,7 +109,9 @@ osx-update-enable: ## Enable automatic OS X updates
 	@sudo softwareupdate --schedule on
 
 rvm:  ## Install rvm
-	curl -sSL https://get.rvm.io | bash
+ifeq (, $(shell which rvm))
+curl -sSL https://get.rvm.io | bash
+endif
 
 ssh:  ## Setup ssh subsystem
 	ssh-keyscan github.com >> ~/.ssh/known_hosts
