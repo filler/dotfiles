@@ -23,12 +23,6 @@ banner:
 #
 # TODO rebootstrap ~/.ssh/
 # TODO rebootstrap ~/code/
-# TODO figlet
-# TODO lastpass-universal
-# TODO navicat
-# TODO remote-desktop-connection
-# TODO ssh-add -K <keys>
-# TODO add shell change - /etc/shells and chsh -s to brew zsh
 
 # All the vim plugins to install
 PLUGINS = \
