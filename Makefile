@@ -82,7 +82,7 @@ bin: ## Setup ~/bin
 vim: ## Setup vimbundles
 	if [ ! -d ~/.vim/autoload ] ; then mkdir -p ~/.vim/autoload ; fi
 	if [ ! -d ~/.vim/bundle/ ] ; then mkdir -p ~/.vim/bundle/ ; fi
-	cd ~/.vim/bundle/ && $(foreach plugin,$(PLUGINS), [ -d $(plugin) ] || git clone -q $(plugin) ; )
+	cd ~/.vim/bundle/ && $(foreach plugin,$(PLUGINS), git clone -q $(plugin) || true )
 	if [ ! -d /tmp/fonts ] ; then cd /tmp && git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh ; fi
 	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
