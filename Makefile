@@ -51,7 +51,7 @@ PLUGINS = \
 	https://github.com/tpope/vim-sensible.git               \
 	https://github.com/vadv/vim-chef.git                    \
 
-all: packages bin ssh python vim zsh rvm link ## ALL THE THINGS
+all: packages vpn bin ssh python vim zsh rvm link ## ALL THE THINGS
 
 link: ## symlink all relevant dotfiles
 	ln -sf ~/.dotfiles/bashrc         ~/.bashrc
@@ -124,6 +124,10 @@ endif
 test: ## Test
 	docker pull koalaman/shellcheck:stable && \
 	docker run -v "$PWD:/mnt" koalaman/shellcheck *
+
+vpn:  ## Setup VPN bits
+	curl -LO 'https://vpn-nyc3.digitalocean.com/global-protect/msi/GlobalProtect.pkg'
+	sudo installer -verbose -pkg GlobalProtect.pkg -target /
 
 zsh:  ## Install oh-myzsh
 	if [ ! -d ~/.oh-my-zsh ] ; then curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh ; fi
