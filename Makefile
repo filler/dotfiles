@@ -51,7 +51,7 @@ PLUGINS = \
 	https://github.com/tpope/vim-sensible.git               \
 	https://github.com/vadv/vim-chef.git                    \
 
-all: packages bin ssh vim zsh rvm link ## ALL THE THINGS
+all: packages bin ssh python vim zsh rvm link ## ALL THE THINGS
 
 link: ## symlink all relevant dotfiles
 	ln -sf ~/.dotfiles/bashrc         ~/.bashrc
@@ -107,6 +107,9 @@ osx-update-enable: ## Enable automatic OS X updates
 	@sudo softwareupdate --schedule
 	@echo "Enabling automatic update schedule ..."
 	@sudo softwareupdate --schedule on
+
+python:  ## Install python bits
+	pip install -r requirements.txt
 
 rvm:  ## Install rvm
 ifeq (, $(shell which rvm))
