@@ -23,12 +23,6 @@ banner:
 #
 # TODO rebootstrap ~/.ssh/
 # TODO rebootstrap ~/code/
-# TODO figlet
-# TODO lastpass-universal
-# TODO navicat
-# TODO remote-desktop-connection
-# TODO ssh-add -K <keys>
-# TODO add shell change - /etc/shells and chsh -s to brew zsh
 
 # All the vim plugins to install
 PLUGINS = \
@@ -51,7 +45,7 @@ PLUGINS = \
 	https://github.com/tpope/vim-sensible.git               \
 	https://github.com/vadv/vim-chef.git                    \
 
-all: packages bin ssh vim zsh rvm link ## ALL THE THINGS
+all: packages vpn bin ssh python vim zsh rvm link ## ALL THE THINGS
 
 link: ## symlink all relevant dotfiles
 	ln -sf ~/.dotfiles/bashrc         ~/.bashrc
@@ -108,6 +102,9 @@ osx-update-enable: ## Enable automatic OS X updates
 	@echo "Enabling automatic update schedule ..."
 	@sudo softwareupdate --schedule on
 
+python:  ## Install python bits
+	pip install -r requirements.txt
+
 rvm:  ## Install rvm
 ifeq (, $(shell which rvm))
 curl -sSL https://get.rvm.io | bash
@@ -122,5 +119,12 @@ test: ## Test
 	docker pull koalaman/shellcheck:stable && \
 	docker run -v "$PWD:/mnt" koalaman/shellcheck *
 
+vpn:  ## Setup VPN bits
+	curl -LO 'https://vpn-nyc3.digitalocean.com/global-protect/msi/GlobalProtect.pkg'
+	sudo installer -verbose -pkg GlobalProtect.pkg -target /
+
 zsh:  ## Install oh-myzsh
 	if [ ! -d ~/.oh-my-zsh ] ; then curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh ; fi
+	dscl . -read /Users/$USER UserShell
+	sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+	dscl . -read /Users/$USER UserShell
