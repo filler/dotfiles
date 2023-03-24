@@ -127,3 +127,9 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
+
+# docc
+source <(docc completion zsh)
+
+# docker
+dockernuke() { docker rmi $(docker images -q); }
