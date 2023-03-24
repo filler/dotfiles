@@ -119,10 +119,6 @@ tbe () {
   echo $(( ( $(gdate +%s -d "$2") - $(gdate +%s -d "$1") ) / 60 / 60 )) ;
 }
 
-# google (gcp) gcloud
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
 # goenv
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
