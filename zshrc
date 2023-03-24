@@ -8,7 +8,7 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 DEFAULT_USER="$USER"
 
 # Example aliases
