@@ -52,6 +52,7 @@ link: ## symlink all relevant dotfiles
 	ln -sf ~/.dotfiles/bash_profile   ~/.bash_profile
 	ln -sf ~/.dotfiles/bash_prompt    ~/.bash_prompt
 	ln -sf ~/.dotfiles/Brewfile       ~/.Brewfile
+	ln -sf ~/.dotfiles/digrc          ~/.digrc
 	ln -sf ~/.dotfiles/gemrc          ~/.gemrc
 	ln -sf ~/.dotfiles/gitconfig      ~/.gitconfig
 	ln -sf ~/.dotfiles/ruby-version   ~/.ruby-version
