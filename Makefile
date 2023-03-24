@@ -84,6 +84,11 @@ vim: ## Setup vimbundles
 brew-dump:  ## True up your Brewfile for brew bundler
 	@rm Brewfile ; brew bundle dump
 
+git-remote:  ## Adjust this git remote from https to ssh
+	cd ~/.dotfiles && git remote -v && \
+		git remote set-url origin git@github.com:filler/dotfiles.git && \
+		git remote -v
+
 osx-prefs: ## Set OS X preferences
 	@defaults write com.apple.finder CreateDesktop -bool false && \
 	defaults write com.apple.desktopservices DSDontWriteNetworkStores true && \
