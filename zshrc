@@ -24,7 +24,7 @@ alias vpnvidyono="sudo route -n delete 174.143.224.224/27 $(netstat -nr | egrep 
 alias vpnvidyodel="sudo route -n delete 174.143.224.224/27 $(netstat -nr | egrep '^default.*UGScI' | awk {'print $2'})"
 
 # Homebrew
-alias brewup="brew update ; brew upgrade ; brew cu -y ; brew cleanup ; brew cleanup"
+alias brewup="brew update ; brew upgrade --greedy ; brew cu --no-brew-update --yes --all ; brew cleanup ; brew cleanup"
 
 # No ssh hostkeys
 alias hussh="ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
