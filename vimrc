@@ -11,6 +11,7 @@ set showmatch
 " set binary noeol
 set cc=80
 set tw=80
+set ruler
 
 " Powerline
 " http://choorucode.com/2013/02/17/how-to-install-and-use-vim-powerline-plugin-for-vim/
@@ -33,7 +34,8 @@ let g:syntastic_check_on_wq = 0
 
 " vim-markdown
 " https://github.com/tpope/vim-markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+"" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
 " solarized
 " https://github.com/altercation/vim-colors-solarized
@@ -86,3 +88,6 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 " Show trailing whitespace and spaces before a tab:
 match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+" https://vi.stackexchange.com/questions/9753/line-formatting-gq-does-not-correctly-indent-long-list-items
+set autoindent
