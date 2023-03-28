@@ -1,30 +1,19 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Jabba
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 DEFAULT_USER="$USER"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Openconnect
-alias vpnyes="sudo openconnect vpn.dfw1.rackspace.com -b"
-alias vpnno="sudo pkill -SIGINT openconnect"
-alias vpnwat="curl -s icanhazip.com | xargs -n1 dig +short -x"
-alias vpnvidyo="sudo route -n add 174.143.224.224/27 $(netstat -nr | egrep '^default.*UGScI' | awk {'print $2'})"
-alias vpnvidyono="sudo route -n delete 174.143.224.224/27 $(netstat -nr | egrep '^default.*UGScI' | awk {'print $2'})"
-alias vpnvidyodel="sudo route -n delete 174.143.224.224/27 $(netstat -nr | egrep '^default.*UGScI' | awk {'print $2'})"
-
 # Homebrew
-alias brewup="brew update ; brew upgrade ; brew cu -y ; brew cleanup ; brew cleanup"
+alias brewup="brew update ; brew upgrade --greedy ; brew cu --no-brew-update --yes --all ; brew cleanup ; brew cleanup"
 
 # No ssh hostkeys
 alias hussh="ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
@@ -69,7 +58,20 @@ alias hussh="ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github brew osx sublime rsync tmux rbenv jsontools vim-interaction vi-mode vundle rvm wd pyenv)
+plugins=( \
+  brew \
+  doctl \
+  git \
+  github \
+  jsontools \
+  macos \
+  rsync \
+  tmux \
+  vi-mode \
+  vim-interaction \
+  vundle \
+  wd \
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,11 +119,26 @@ tbe () {
   echo $(( ( $(gdate +%s -d "$2") - $(gdate +%s -d "$1") ) / 60 / 60 )) ;
 }
 
-# google (gcp) gcloud
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
 # goenv
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
+
+# docc
+source <(docc completion zsh)
+
+# docker
+dockernuke() { docker rmi $(docker images -q); }
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"

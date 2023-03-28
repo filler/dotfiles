@@ -52,6 +52,7 @@ link: ## symlink all relevant dotfiles
 	ln -sf ~/.dotfiles/bash_profile   ~/.bash_profile
 	ln -sf ~/.dotfiles/bash_prompt    ~/.bash_prompt
 	ln -sf ~/.dotfiles/Brewfile       ~/.Brewfile
+	ln -sf ~/.dotfiles/digrc          ~/.digrc
 	ln -sf ~/.dotfiles/gemrc          ~/.gemrc
 	ln -sf ~/.dotfiles/gitconfig      ~/.gitconfig
 	ln -sf ~/.dotfiles/ruby-version   ~/.ruby-version
@@ -82,6 +83,11 @@ vim: ## Setup vimbundles
 
 brew-dump:  ## True up your Brewfile for brew bundler
 	@rm Brewfile ; brew bundle dump
+
+git-remote:  ## Adjust this git remote from https to ssh
+	cd ~/.dotfiles && git remote -v && \
+		git remote set-url origin git@github.com:filler/dotfiles.git && \
+		git remote -v
 
 osx-prefs: ## Set OS X preferences
 	@defaults write com.apple.finder CreateDesktop -bool false && \

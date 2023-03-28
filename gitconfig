@@ -34,6 +34,8 @@
   co              = checkout
   ci              = commit --verbose
   ciaa            = commit -a --amend
+  cln             = clean -n
+  cl              = clean -f -d
   cm              = checkout master
   di              = diff
   f               = fetch -v --tags
@@ -109,3 +111,5 @@
 [hub]
   host = github.internal.digitalocean.com
   protocol = https
+[feature]
+	manyFiles = true
