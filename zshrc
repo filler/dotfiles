@@ -129,3 +129,5 @@ source <(docc completion zsh)
 
 # docker
 dockernuke() { docker rmi $(docker images -q); }
+
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
